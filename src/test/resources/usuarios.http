@@ -1,0 +1,50 @@
+### Obtener todos los usuarios
+GET http://localhost:8080/api/usuarios
+
+
+### Obtener un usuario por su id
+GET http://localhost:8080/api/usuarios/1
+
+
+### Crear un usuario
+POST http://localhost:8080/api/usuarios
+Content-Type: application/json
+
+
+{
+  "nombre": "Carlos",
+  "telefono": "2201232",
+  "ciudad": "Armenia",
+  "direccion": "Calle 12",
+  "email": "carlos@email.com",
+  "password": "1234567"
+}
+
+
+### Actualizar un usuario
+PUT http://localhost:8080/api/usuarios
+Content-Type: application/json
+
+
+{
+  "id": 1,
+  "nombre": "Carlos",
+  "ciudad": "Armenia",
+  "direccion": "Nueva dirección"
+}
+
+
+### Eliminar un usuario
+DELETE http://localhost:8080/api/usuarios/1
+
+//Filtrar por Nombre y Ciudad
+### Obtener todos los usuarios que tengan un nombre dado
+GET http://localhost:8080/api/usuarios/buscar?nombre=Carlos
+
+
+### Obtener todos los usuarios cuya ciudad de residencia sea Armenia
+GET http://localhost:8080/api/usuarios/buscar?ciudad=Armenia
+
+
+### Obtener todos los usuarios cuya ciudad de residencia sea Armenia y su nombre sea Carlos
+GET http://localhost:8080/api/usuarios/buscar?ciudad=Armenia&nombre=Carlos
