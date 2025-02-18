@@ -23,7 +23,7 @@ public class UsuarioControlador {
     //Medodo CRUD
     @PostMapping
     public ResponseEntity<MensajeDTO<String>> crear(@Valid @RequestBody CrearUsuarioDTO cuenta) throws Exception {
-        usuarioServicio.crear(cuenta);
+        usuarioServicio.crear(cuenta); //Logica Del Negocio
         return ResponseEntity.ok(new MensajeDTO<>(false, "Su registro ha sido exitoso"));
     }
 
